@@ -1,0 +1,1014 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font_text: 'Comic Sans MS', 'cursive', sans-serif;
+    --bg-light: #efefef;
+    --clr: #1b9c5c;
+    --clr-hv: #0b723f;
+    --clr-alpha: #9c9c9c60;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    font-family: var(--font_text);
+    display: flex;
+    justify-content: center;
+}
+
+/* start menu */
+.menu {
+    font-family: var(--font_text);
+    background-color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    border-right: 1px solid rgba(88, 88, 88, 0.582);
+    z-index: 3;
+}
+
+.menu .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    padding: 50px 15px 60px 15px;
+}
+
+.menu .logo a {
+    text-decoration: none;
+    color: black;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.mn {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    list-style: none;
+    height: 100vh;
+}
+
+.mn a {
+    text-decoration: none;
+    color: #000;
+}
+
+.mn li {
+    cursor: pointer;
+    position: relative;
+    font-size: 18px;
+    height: 50px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    margin: 0 12px;
+    border-radius: 8px;
+    transition: 0.15s;
+}
+
+
+.mn li:active span {
+    font-weight: bold;
+}
+
+.mn li:hover {
+    background-color: rgba(61, 61, 61, 0.1);
+}
+
+.mn li:hover i {
+    transition: 0.3s;
+    transform: scale(1.05);
+}
+
+.mn li .dot-red {
+    position: absolute;
+    left: 23px;
+    top: 16.8px;
+    width: 7px;
+    height: 7px;
+    background-color: red;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+.mn li .dot-red.hidden {
+    display: none;
+}
+
+.mn li span {
+    margin-left: 20px;
+}
+
+.mn li img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+/* end menu */
+
+/* start notifications */
+.notifications {
+    font-family: var(--font_text);
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: -150px;
+    width: 350px;
+    max-height: 100vh;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    transition: left 0.5s ease-in-out;
+    z-index: 1;
+    overflow-y: auto;
+    /* Cuộn cả thẻ notifications nếu nội dung vượt quá chiều cao màn hình */
+    padding: 10px;
+}
+
+.notifications.show {
+    left: 250px;
+}
+
+.notifications .head-noti {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.notifications .head-noti span {
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.notifications .body-noti {
+    width: 100%;
+    padding: 10px;
+    overflow-y: visible;
+    /* Không cần cuộn ở thẻ ul */
+}
+
+.body-noti ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.body-noti li.noti {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+.noti .trai {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+}
+
+.noti .trai a img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.noti .giua {
+    flex: 1;
+    padding: 0 15px;
+}
+
+.noti .giua a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+}
+
+.noti .giua .text {
+    font-size: 16px;
+    color: #666;
+}
+
+.noti .phai {
+    width: 50px;
+    height: 50px;
+    margin-left: 15px;
+}
+
+.noti .phai .img-post {
+    border-radius: 8px;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.noti:hover {
+    background-color: #f7f7f7;
+    width: 100%;
+}
+
+.noti:hover .giua a {
+    color: #337ab7;
+}
+
+/* end notifications */
+
+/* start main */
+.main {
+    display: flex;
+    width: 1000px;
+    padding-top: 30px;
+    margin-left: 300px;
+}
+
+/* end main */
+
+/* start post */
+.post {
+    width: 751px;
+}
+
+/*start searching */
+.searching {
+    padding-bottom: 25px;
+}
+
+/* end serching */
+
+/* start post-user */
+.post-user {
+    padding-top: 20px;
+    font-family: var(--font_text);
+    width: 100%;
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+}
+
+.post-user1 {
+    width: 550px;
+    /* height: 650px; */
+}
+
+.post-user1 .in4 {
+    gap: 20px;
+    padding: 15px 2px 12px 8px;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.post-user1 .in4 .avatar {
+    width: 67px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.post-user1 .in4 .name {
+    font-weight: bold;
+}
+
+.post-user1 .in4 .time {
+    margin-left: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    color: gray;
+    position: relative;
+}
+
+.post-user1 .in4 .time::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: gray;
+    position: absolute;
+    left: -18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.post-user1 .in4 .more-option {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+}
+
+.more-option .three-dots {
+    cursor: pointer;
+}
+
+.content-post-main {
+    width: 100%;
+    padding: 5px 20px;
+    flex-wrap: wrap;
+}
+
+.post-user1 .posts {
+    width: 100%;
+    height: 520px;
+}
+
+.post-user1 .posts img {
+    border-radius: 4.5px;
+    width: 100%;
+    height: 100%;
+}
+
+.post-user1 .tym {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.829);
+}
+
+/* start tym */
+
+.heart-container {
+    --heart-color: rgb(255, 91, 137);
+    position: relative;
+    width: 25px;
+    height: 25px;
+    transition: .3s;
+}
+
+.heart-container .checkbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 5;
+    cursor: pointer;
+}
+
+.heart-container .svg-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-container .svg-outline,
+.heart-container .svg-filled {
+    fill: var(--heart-color);
+    position: absolute;
+}
+
+.heart-container .svg-filled {
+    animation: keyframes-svg-filled 1s;
+    display: none;
+}
+
+.heart-container .svg-celebrate {
+    position: absolute;
+    animation: keyframes-svg-celebrate .5s;
+    animation-fill-mode: forwards;
+    display: none;
+    stroke: var(--heart-color);
+    fill: var(--heart-color);
+    stroke-width: 2px;
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-filled {
+    display: block
+}
+
+.heart-container .checkbox:checked~.svg-container .svg-celebrate {
+    display: block
+}
+
+@keyframes keyframes-svg-filled {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(1);
+        filter: brightness(1.5);
+    }
+}
+
+@keyframes keyframes-svg-celebrate {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+
+    100% {
+        transform: scale(1.4);
+        opacity: 0;
+        display: none;
+    }
+}
+
+/* end tym */
+
+/* start comment */
+.card {
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+
+    border-radius: 17px 17px 27px 27px;
+}
+
+.title {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    border-bottom: 1px solid #f1f1f1;
+    font-weight: 700;
+    font-size: 13px;
+    color: #47484b;
+}
+
+.title::after {
+    content: '';
+    width: 8ch;
+    height: 1px;
+    position: absolute;
+    bottom: -1px;
+    background-color: #47484b;
+}
+
+.comments {
+    display: grid;
+    grid-template-columns: 35px 1fr;
+    gap: 20px;
+    padding: 20px;
+    max-height: 150px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.comments:hover {
+    overflow-y: scroll;
+}
+
+.comments::-webkit-scrollbar {
+    width: 5px;
+    /* set kích cỡ rộng của thanh cuộn */
+    /* height: 10px; */
+    /* set kích cỡ cao của thanh cuộn */
+}
+
+.comments::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    /* set màu sắc của nút cuộn */
+    border-radius: 20px;
+    /* set bán kính góc của nút cuộn */
+}
+
+.comments::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* set màu sắc của đường ray cuộn */
+}
+
+.comment-react {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.comment-react button {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.comment-react svg path {
+    fill: none; /* Trạng thái mặc định là không tô màu */
+    stroke: #707277; /* Màu viền mặc định */
+    transition: fill 0.3s ease; /* Thêm hiệu ứng chuyển đổi cho màu */
+}
+
+.comment-react.liked svg path {
+    fill: #f5356e; /* Tô màu đỏ khi thích */
+    stroke: #f5356e; /* Thay đổi màu viền khi thích */
+}
+
+
+
+.comment-react span {
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    font-size: 13px;
+    font-weight: 600;
+    color: #707277;
+}
+
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 0;
+    margin: 0;
+}
+
+.comment-container .user {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+}
+
+.comment-container .user .user-pic img.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.comment-container .user .user-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.comment-container .user .user-info span {
+    font-weight: 700;
+    font-size: 14px;
+    color: #000000;
+}
+
+.comment-container .user .user-info p {
+    margin-left: 5px;
+    font-weight: 600;
+    font-size: 10.5px;
+    color: #606161;
+}
+
+.cmt-ct {
+    width: 420px;
+    padding: 7px;
+    display: flex;
+    border-radius: 10px;
+    background-color: #dbdada69;
+    word-wrap: break-word;
+    /* Tự động xuống dòng khi từ dài quá */
+    word-break: break-all;
+    /* Chia từ ở bất kỳ đâu khi không đủ chỗ */
+
+}
+
+.comment-container .comment-content {
+    font-size: 15px;
+    line-height: 13px;
+    font-weight: 600;
+    color: #3f3f3f;
+    padding-left: 10px;
+}
+
+.text-box {
+    width: 100%;
+    height: fit-content;
+    background-color: #f1f1f1;
+    padding: 8px;
+}
+
+.text-box .box-container {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px 8px 21px 21px;
+    padding: 8px;
+    gap: 10px;
+}
+
+.text-box textarea {
+    width: 100%;
+    height: 40px;
+    resize: none;
+    border: 0;
+    border-radius: 6px;
+    padding: 12px 12px 10px 12px;
+    font-size: 13px;
+    outline: none;
+    caret-color: #0aff33;
+    overflow-y: hidden;
+}
+
+.text-box textarea:hover {
+    overflow-y: scroll;
+}
+
+.text-box textarea::-webkit-scrollbar {
+    width: 5px;
+    /* set kích cỡ rộng của thanh cuộn */
+    /* set kích cỡ cao của thanh cuộn */
+}
+
+.text-box textarea::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    /* set màu sắc của nút cuộn */
+    border-radius: 20px;
+    /* set bán kính góc của nút cuộn */
+}
+
+.text-box textarea::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* set màu sắc của đường ray cuộn */
+}
+
+.text-box .formatting {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto 1fr;
+}
+
+.text-box .formatting button {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 50%;
+    border: 0;
+    outline: none;
+}
+
+.text-box .formatting button:hover {
+    background-color: #f1f1f1;
+}
+
+.text-box .formatting .send {
+    width: 30px;
+    height: 30px;
+    background-color: #0affa1;
+    margin: 0 0 0 auto;
+}
+
+.text-box .formatting .send:hover {
+    background-color: #02dabd;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* end comment */
+/* end post-user */
+/* end post */
+
+/* start suggested */
+.suggested {
+    margin-left: 60px;
+    width: 350px;
+    height: 100vh;
+    font-family: var(--font_text);
+}
+
+.suggested .top {
+    gap: 16px;
+    padding: 5px 15px 20px 8px;
+    display: flex;
+    align-items: center;
+}
+
+.suggested .top a {
+    text-decoration: none;
+    color: #000;
+}
+
+.suggested .top a.profile img.profile {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.suggested .top .name-account .name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.suggested .top .switch {
+    color: rgb(0, 4, 255);
+    margin-left: 5em;
+    font-size: 13px;
+}
+
+.suggested .top .switch:hover {
+    color: rgb(0, 0, 114);
+}
+
+.text {
+    color: gray;
+    font-size: 16px;
+}
+
+.suggested .bottom {
+    padding: 20px 15px 20px 8px;
+    overflow-y: hidden;
+    height: 76vh;
+}
+
+.suggested .bottom:hover {
+    overflow-y: auto;
+}
+
+.suggested .bottom::-webkit-scrollbar {
+    width: 5px;
+    /* set kích cỡ rộng của thanh cuộn */
+    /* height: 10px; */
+    /* set kích cỡ cao của thanh cuộn */
+}
+
+.suggested .bottom::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    /* set màu sắc của nút cuộn */
+    border-radius: 20px;
+    /* set bán kính góc của nút cuộn */
+}
+
+.suggested .bottom::-webkit-scrollbar-track {
+    background-color: transparent;
+    /* set màu sắc của đường ray cuộn */
+}
+
+.suggested .bottom .sugges {
+    padding: 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: 0.8s;
+}
+
+.suggested .bottom .sugges.hide {
+    opacity: 0;
+}
+
+.suggested .bottom a {
+    text-decoration: none;
+    color: #000;
+}
+
+.suggested .bottom a img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.suggested .bottom .name-account .name {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.suggested .bottom .follow {
+    color: rgb(255, 0, 76);
+    margin-left: 6em;
+    font-size: 13px;
+}
+
+.suggested .bottom .follow:hover {
+    color: rgba(187, 4, 4, 0.932);
+}
+
+/* end suggested */
+
+.layer1 {
+    z-index: 10;
+    opacity: 60%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(5, 5, 5, 0.658);
+}
+
+
+.layer1,
+.modal1 {
+    display: none;
+    /* Ẩn layer1 và modal1 */
+}
+
+.layer1.active,
+.modal1.active {
+    display: block;
+    /* Hiển thị layer1 và modal1 khi có lớp active */
+}
+
+/* Modal 1 styles */
+.modal1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+/* Modal create styles */
+.modal-create {
+    font-family: var(--font_text);
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    color: rgb(15, 14, 14);
+    max-width: 480px;
+    max-height: 500px;
+    overflow: hidden;
+}
+
+.content>*,
+.modal-create>* {
+    padding: 0.875em;
+}
+
+.content .title {
+    font-size: 1.25em;
+    font-weight: 600;
+    line-height: 1.2;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgb(216, 216, 216);
+}
+
+.content .title::after {
+    content: none;
+}
+
+.content .message {
+    line-height: 1.2;
+    text-align: center;
+}
+
+.content-post {
+    margin-top: 5px;
+    width: 100%;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid rgb(187, 187, 187);
+}
+
+.content .actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.actions .upload-btn {
+    background-color: transparent;
+    border: 0.125rem dashed hsla(223, 10%, 50%, 0.4);
+    flex: 1;
+    padding: 0.375rem 2rem;
+    cursor: pointer;
+}
+
+.actions .upload-btn:hover {
+    background-color: hsla(223, 10%, 60%, 0.2);
+}
+
+.actions button {
+    padding: 9px;
+    margin-left: 20px;
+    border: 1px solid;
+    border: none;
+    background-color: var(--clr);
+    border-radius: 50%;
+    color: white;
+}
+
+.actions button:hover {
+    background-color: var(--clr-hv);
+}
+
+.close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(226, 94, 54);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.close:hover {
+    background-color: rgb(255, 38, 0);
+}
+
+/* Uploaded image styles */
+.up-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    /* adjust the height according to your needs */
+    border: 1px solid #ddd;
+    /* optional border */
+    border-radius: 0.5em;
+    /* optional border radius */
+}
+
+.up-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    /* keep the image aspect ratio */
+    margin: auto;
+    /* center the image horizontally and vertically */
+}
+
+/* start modal option post */
+.layer1,
+.modal2 {
+    display: none;
+    /* Ẩn layer1 và modal1 */
+}
+
+.layer1.active,
+.modal2.active {
+    display: block;
+    /* Hiển thị layer1 và modal1 khi có lớp active */
+}
+
+.modal2 {
+    z-index: 11;
+    position: absolute;
+    top: 200px;
+}
+
+.content1>* {
+    cursor: pointer;
+    padding: 15px 100px;
+    font-size: 17px;
+}
+
+.content1 .detele:active,
+.content1 .cancle:active {
+    background-color: rgb(240, 240, 240);
+    opacity: 0.2;
+}
+
+.modal-option-post {
+    font-family: var(--font_text);
+    background-color: rgb(255, 255, 255);
+    border-radius: 1em;
+    color: rgb(15, 14, 14);
+    overflow: hidden;
+}
+
+/* end modal option post */

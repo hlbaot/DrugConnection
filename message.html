@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Drug Connect</title>
+    <link rel="stylesheet" href="message.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- <div class="layer"></div> -->
+    <!-- start menu -->
+    <div class="menu">
+        <div class="logo">
+            <a href="home.html">DrugConnection</a>
+        </div>
+        <ul class="home_selection">
+            <a href="home.html">
+                <li class="home_selection-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </li>
+            </a>
+            <a href="#">
+                <li class="home_selection-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Messages</span>
+                </li>
+            </a>
+            <a href="#" id="dot-red">
+                <li class="home_selection-item">
+                    <div class="dot-red"></div>
+                    <i class="fas fa-bell"></i>
+                    <span>Notifications</span>
+                </li>
+            </a>
+            <li style="cursor: pointer;" class="home_selection-item" id="create">
+                <i class="fas fa-plus-circle  "></i>
+                <span>Create</span>
+            </li>
+            <a href="profilee.html">
+                <li class="home_selection-item">
+                    <img src="https://i.pinimg.com/236x/9d/4a/49/9d4a49b2b2b9392d3f844c4dbcff52d6.jpg" alt="">
+                    <span>Profile</span>
+                </li>
+            </a>
+            <div
+                style="background-color: white; width: 100%; position: absolute;bottom: 0; padding: 10px 0; display: flex; justify-content: center; border-top: 1px solid black;">
+                <a href="LogDrug.html">
+                    <span style="color: red;">Log out</span>
+                </a>
+            </div>
+        </ul>
+    </div>
+
+    <!-- start notifications -->
+    <div class="notifications">
+        <div class="head-noti">
+            <span>Notifications</span>
+        </div>
+        <ul class="body-noti">
+            <li class="noti" id="user-follow">
+                <div class="trai">
+                    <a href="profilee.html"><img
+                            src="https://i.pinimg.com/236x/f8/97/14/f89714028a2bb3a024a326d31b3a0f14.jpg" alt=""></a>
+                </div>
+                <div class="giua">
+                    <a href="profilee.html"><span>name1</span></a>
+                    <span class="text">started following you.</span>
+                </div>
+            </li>
+            <li class="noti" id="user-reacted">
+                <div class="trai">
+                    <a href="profilee.html"><img
+                            src="https://i.pinimg.com/236x/58/25/49/5825498321351abeffc86d3a89ed7251.jpg" alt=""></a>
+                </div>
+                <div class="giua">
+                    <a href="profilee.html"><span>name1</span></a>
+                    <span class="text">liked your post.</span>
+                </div>
+                <div class="phai"><img class="img-post"
+                        src="https://i.pinimg.com/236x/58/25/49/5825498321351abeffc86d3a89ed7251.jpg" alt=""></div>
+            </li>
+            <li class="noti" id="user-comment">
+                <div class="trai">
+                    <a href="profilee.html"><img
+                            src="https://i.pinimg.com/236x/e1/92/dc/e192dc932b630f157cc3205fed799d38.jpg" alt=""></a>
+                </div>
+                <div class="giua">
+                    <a href="profilee.html"><span>name1</span></a>
+                    <span class="text">started comment your post.</span>
+                </div>
+                <div class="phai"><img class="img-post"
+                        src="https://i.pinimg.com/236x/e1/92/dc/e192dc932b630f157cc3205fed799d38.jpg" alt=""></div>
+            </li>
+            <li class="noti" id="user-reacted-cmt">
+                <div class="trai">
+                    <a href="profilee.html"><img
+                            src="https://i.pinimg.com/236x/58/25/49/5825498321351abeffc86d3a89ed7251.jpg" alt=""></a>
+                </div>
+                <div class="giua">
+                    <a href="profilee.html"><span>name1</span></a>
+                    <span class="text">liked your comment.</span>
+                </div>
+                <div class="phai"><img class="img-post"
+                        src="https://i.pinimg.com/236x/58/25/49/5825498321351abeffc86d3a89ed7251.jpg" alt=""></div>
+            </li>
+        </ul>
+    </div>
+    <!-- end notifications -->
+
+    <div class="message">
+        <div class="message_header">
+            <div class="message_header-friend-wrap">
+                <ul class="message_header-friend">
+                    <li class="message_friend-item">
+                        <img src="https://th.bing.com/th/id/OIP.pXnDAdJQxJBmK737FsQF6QHaHa?rs=1&pid=ImgDetMain" alt=""
+                            class="friend_item-img">
+                        <span class="friend_name">User 1</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://i.pinimg.com/originals/46/7a/73/467a73eafe25357d5f2e1275187896bd.jpg" alt=""
+                            class="friend_item-img">
+                        <span class="friend_name">User 2</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://i.redd.it/algyrazh2gd51.png" alt="" class="friend_item-img">
+                        <span class="friend_name">User 3</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://i.pinimg.com/originals/99/1f/22/991f22033025bd4b2770c74ba32cce03.jpg" alt=""
+                            class="friend_item-img">
+                        <span class="friend_name">User 4</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://th.bing.com/th/id/OIP.O21O10UUMdtcI_BsMbZQ_wHaHv?w=232&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            alt="" class="friend_item-img">
+                        <span class="friend_name">User 5</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://th.bing.com/th/id/OIP.VeMrV2sY8wTS8GKgOQDOUQHaJ3?w=129&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            alt="" class="friend_item-img">
+                        <span class="friend_name">User 6</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://th.bing.com/th/id/OIP.u20A5wBwi8Prm2xUnQkLcwHaIk?w=190&h=220&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            alt="" class="friend_item-img">
+                        <span class="friend_name">User 7</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://th.bing.com/th/id/OIP.qx0E_PTeH_Xo79JhmdvHOQHaEL?rs=1&pid=ImgDetMain" alt=""
+                            class="friend_item-img">
+                        <span class="friend_name">User 8</span>
+                    </li>
+                    <li class="message_friend-item">
+                        <img src="https://th.bing.com/th/id/OIP.L7rG5KcyeumBlTTYKZ-ezgHaHa?w=182&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                            alt="" class="friend_item-img">
+                        <span class="friend_name">User 9</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- message body -->
+        <div class="message_body">
+            <div class="message_body-header">
+                <div class="contact_info">
+                    <img src="https://th.bing.com/th/id/OIP.pXnDAdJQxJBmK737FsQF6QHaHa?rs=1&pid=ImgDetMain" alt=""
+                        class="contact_img">
+                    <span class="contact_name">User 1</span>
+                </div>
+                <ul class="contact_option">
+                    <li class="contact_option-item more_click">
+                        <i class='bx bx-dots-horizontal-rounded '>
+                        </i>
+                        <div class="more_option">
+                            <span class="more_option-item block_btn">Block</span>
+                            <span class="more_option-item">Delete chat</span>
+                        </div>
+                    </li>
+                    <li class="contact_option-item">
+                        <i class=' bx bxs-phone'></i>
+                    </li>
+                    <li class="contact_option-item">
+                        <i class='bx bxs-video'></i>
+                    </li>
+                </ul>
+            </div>
+            <!-- type -->
+            <div class="message_body-content">
+                <div class="message_chat">
+
+                    <div class="message_client">
+                        <img src="https://th.bing.com/th/id/OIP.pXnDAdJQxJBmK737FsQF6QHaHa?rs=1&pid=ImgDetMain" alt=""
+                            class="message_client-avt">
+                        <div class="message_text-wrap">
+                            <div class="mes_content">
+
+                                <span class="message-text color_mes-client">Hiiiiii
+                                </span>
+                                <ul class="content_option">
+                                    <li class="content_react">
+                                        <i class='bx bx-smile'></i>
+                                    </li>
+                                    <li class="content_reply">
+                                        <i class='bx bx-reply reply-btn'></i>
+                                    </li>
+                                    <li class="content_more">
+                                        <i class='bx bx-dots-vertical-rounded'></i>
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="message_me">
+                        <div class="message_text-wrap">
+
+                            <div class="mes_content-me">
+                                <ul class="content_option ">
+                                    <li class="content_reply">
+                                        <i class='bx bx-reply reply-btn'></i>
+                                    </li>
+                                    <li class="content_more">
+                                        <!-- delete_card -->
+                                        <i class='bx bx-dots-vertical-rounded delete_mes'>
+                                            <div class="delete_mes-wrap">
+                                                <ul class="delete_option">
+                                                    <li class="delete_option-item">forward</li>
+                                                    <li class="delete_option-item">copy</li>
+                                                    <li class="delete_option-item-empty"></li>
+                                                    <li class="delete_option-item unsend_btn">unsend</li>
+                                                </ul>
+                                            </div>
+                                        </i>
+
+                                    </li>
+                                    <li class="content_react">
+                                        <i class='bx bx-smile'></i>
+                                    </li>
+                                </ul>
+                                <span class="message-text-me color_mes-client">delete o day</span>
+                            </div>
+                        </div>
+                        <img src="https://i.pinimg.com/236x/9d/4a/49/9d4a49b2b2b9392d3f844c4dbcff52d6.jpg" alt=""
+                            class="message_me-avt">
+                    </div>
+
+                </div>
+                <!-- type_bar-->
+            </div>
+        </div>
+        <div class="type_bar-wrap">
+            <div class="type_bar">
+                <!-- emoji -->
+                <div class="type_bar-icon">
+                    <i class='bx bx-smile'>
+                        <div class="type_bar-emoji">
+                            <img src="https://toppng.com/public/uploads/thumbnail/facebook-likes-11550710022okwz3eqend.png"
+                                alt="" class="type_bar-emoji-item">
+                            <img src="https://www.freeiconspng.com/thumbs/facebook-love-png/facebook-love-png-6.png"
+                                alt="" class="type_bar-emoji-item">
+                            <img src="https://iconape.com/wp-content/png_logo_vector/facebook-reaction-haha.png"
+                                alt="" class="type_bar-emoji-item">
+                            <img src="https://th.bing.com/th/id/R.a531ff6484dae4b1408f15b8b0c705f6?rik=YfEBVN3vuuPCEA&riu=http%3a%2f%2fclipart-library.com%2fimages_k%2fshocked-emoji-transparent-background%2fshocked-emoji-transparent-background-3.png&ehk=WL5oHmF0tbegX7GuYLumaE5hWVE%2bwpNVEJNoRi7z5QM%3d&risl=&pid=ImgRaw&r=0"
+                                alt="" class="type_bar-emoji-item">
+                            <img src="http://clipart-library.com/images_k/facebook-reactions-transparent/facebook-reactions-transparent-4.png"
+                                alt="" class="type_bar-emoji-item">
+                        </div>
+                    </i>
+                </div>
+
+                <!-- typing -->
+                <div class="type_bar-text-wrap">
+                    <input placeholder="Type something..." type="text" class="type_bar-text">
+                </div>
+                <button type="submit" class="send_btn">Send</button>
+
+                <!-- reply -->
+                <div class="type_bar-reply">
+                    <div class="reply_body-text">
+                        <div class="reply_text">
+                            <span>
+                                Replying to
+                            </span>
+                            <span class="reply_to-client">User 1</span>
+                        </div>
+                        <span class="reply_to-text">Helloo</span>
+                    </div>
+                    <i class='bx bx-x'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- modal_block -->
+    <div class="card_wrap">
+        <div class="card">
+            <p class="cookieHeading">Block User1 ?</p>
+            <p class="cookieDescription">They won't be able to find your profile, posts or story on Instagram. Instagram
+                won't let them know you blocked them.</p>
+
+            <div class="buttonContainer">
+                <button class="acceptButton">Block</button>
+                <button class="declineButton">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- blocked -->
+    <div class="card_blocked-wrap">
+        <div class="card_blocked">
+            <div class="card_blocked-content">
+                <p class="card_blocked-heading">You've blocked this account</p>
+                <p class="card_blocked-description">You can't message or video chat with user1.</p>
+            </div>
+            <div class="card_blocked-button-wrapper">
+                <button class="card_blocked-button secondary">Unblock</button>
+                <button class="card_blocked-button primary">Delete chat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- blocked_user -->
+     <div class="block_user-wrap">
+
+         <div class="blocked_user">
+             <span class="blocked_user-text">Can not send message to user1</span>
+             <span class="blocked_user-text blocked_user-text-tittle">User does not exist</span>
+         </div>
+     </div>
+     <!-- end blocked user -->
+     <div class="layer1"></div>
+
+     <!-- start modal create -->
+     <div class="modal1">
+         <form class="modal-create">
+             <span class="close" id="close-button">X</span>
+             <div class="content">
+                 <span class="title">Create new post</span>
+                 <input class="content-post" type="text" placeholder="Content...">
+                 <div class="actions">
+                     <label for="file" class="upload-btn">Select from computer
+                         <input hidden="" type="file" id="file">
+                     </label>
+                     <button id="upload-button" style="display: none;">Up load</button>
+                 </div>
+                 <!-- anh hiện đây khi chọn -->
+                 <div class="up-img"></div>
+             </div>
+         </form>
+     </div>
+     <!-- end modal create -->
+    <script src="message.js"></script>
+</body>
+
+</html>
