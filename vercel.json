@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/home.html" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "DrugConnection/$1" }
+    ]
+  }
+  
